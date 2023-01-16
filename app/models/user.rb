@@ -6,7 +6,9 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true #в хэз_секюр_пас проверяется
+  # наличие пароля и нил не пойдет, поэтому здесь строка позволяет нам второй раз не заполнять
+  # при изменении профиля. странно - разберусь
 
 
   # Returns the hash digest of the given string. закриптованный новый пароль с ценой кост(встроенно)
