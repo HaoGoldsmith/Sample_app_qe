@@ -11,7 +11,7 @@ module SessionsHelper
     elsif (user_id = cookies.encrypted[:user_id]) #если юзер_ид это ид, взятый из куков(зашифрованный ид),
       # т.е сессия не открыта, но когда-то была создана
       user = User.find_by(id: user_id) #ищем юзера по этому ид
-      if user && user.authenticated?(cookies[:remember_token]) #если нашли его и у него авторизовался ремембер токен
+      if user && user.authenticated?(:remember, cookies[:remember_token]) #если нашли его и у него авторизовался ремембер токен
         log_in user #логинимся и делаем текущим юзером
         @current_user = user
       end
