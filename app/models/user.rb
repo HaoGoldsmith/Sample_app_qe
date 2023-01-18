@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token  #позволяет читать и записывать переменную. то есть определяет ее
+  #позволяет читать и записывать переменную. то есть определяет ее
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_save
   :downcase_email
   before_create :create_activation_digest
@@ -58,6 +59,25 @@ class User < ApplicationRecord
     UserMailer.account_activation(self).deliver_now
   end
 
+  # Sets the password reset attributes.
+  def create_reset_digest
+    self.reset_token = User.new_token #создаем новый токен - ресет токен
+    update_columns(reset_digest: User.digest(reset_token), reset_sent_at: Time.zone.now)
+    # update_attribute(:reset_digest, User.digest(reset_token)) #добавляем его в аттрибут под именем ресет диджест
+    # update_attribute(:reset_sent_at, Time.zone.now) #обновляем аттрибут ресет сделан в(время)
+  end
+
+
+  # Sends password reset email.
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now #ф-я пасс_ресет в юзер_мейлере с деливер нау(встроенное)
+  end
+
+
+  # Returns true if a password reset has expired. у юзера есть параметр ресет_сент_эт, его сравниваем с 2 часа назад
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
 
   private
   # Converts email to all lower-case.
