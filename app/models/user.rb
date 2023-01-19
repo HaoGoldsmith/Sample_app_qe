@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   #позволяет читать и записывать переменную. то есть определяет ее
   attr_accessor :remember_token, :activation_token, :reset_token
   before_save
@@ -77,6 +78,11 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired. у юзера есть параметр ресет_сент_эт, его сравниваем с 2 часа назад
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def feed
+    # Micropost.where("user_id = ?", id) равносильно
+    microposts
   end
 
   private

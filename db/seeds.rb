@@ -20,3 +20,27 @@ User.create!(name: "Example User",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+# Generate microposts for a subset of users.
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create!(content: content) }
+end
+
+
+# Create a main sample user.
+User.create!(name: "Hao",
+             email: "saya0304@mail.ru",
+             password:
+               "qwerty1234",
+             password_confirmation: "qwerty1234",
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
+# Generate microposts for a 101 user?.
+user = User.find(101)
+40.times do
+  content = Faker::Lorem.sentence(word_count: 5)
+  user.microposts.create!(content: content)
+end
