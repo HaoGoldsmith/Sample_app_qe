@@ -43,4 +43,12 @@ user = User.find(101)
 40.times do
   content = Faker::Lorem.sentence(word_count: 5)
   user.microposts.create!(content: content)
+
+  # Create following relationships.
+  users = User.all
+  user = users.find(101)
+  following = users[2..50]
+  followers = users[3..40]
+  following.each { |followed| user.follow(followed) }
+  followers.each { |follower| follower.follow(user) }
 end
