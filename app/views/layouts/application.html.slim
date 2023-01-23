@@ -4,15 +4,16 @@ html
     title
       = full_title(yield(:title))
     meta[charset="utf-8"]
-    meta name="viewport" content="width=device-width, initial-scale=1"
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
     = render 'layouts/rheader'
     = render 'layouts/shim'
   body
     = render 'layouts/header'
     .container
       - flash.each do |message_type, message|
-        .alert.alert
+        |  <div class="alert alert-
         = message_type
+        | ">
         = message
     = yield
     = render 'layouts/footer'
