@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  root 'static_pages#home'
+  get '/home', to: 'static_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'sessions/new'
-  root 'static_pages#home'
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
