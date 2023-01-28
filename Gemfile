@@ -13,7 +13,8 @@ gem 'mini_magick',
     '4.9.5'
 gem 'bcrypt', '3.1.13'
 gem 'faker',  '2.1.2'
-gem 'will_paginate', '3.1.8'
+gem 'will_paginate'
+# gem 'will_paginate', '3.1.8'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap-sass', '3.4.1'
 # Use Puma as the app server
@@ -33,6 +34,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem "activeadmin"
 gem "devise"
+# gem "will_paginate", "3.0.pre4"
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
