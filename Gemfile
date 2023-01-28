@@ -29,9 +29,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'slim'
 gem 'slim-rails'
 gem 'html2slim'
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin/activeadmin', branch: 'master'
 gem 'devise'
 gem 'omniauth'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

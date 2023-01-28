@@ -1,3 +1,18 @@
+GIT
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 51689e48ec3faa51127b8462b2219e5e0c09ad8a
+  branch: master
+  specs:
+    activeadmin (2.13.1)
+      arbre (~> 1.2, >= 1.2.1)
+      formtastic (>= 3.1, < 5.0)
+      formtastic_i18n (~> 0.4)
+      inherited_resources (~> 1.7)
+      jquery-rails (~> 4.2)
+      kaminari (~> 1.0, >= 1.2.1)
+      railties (>= 6.1, < 7.1)
+      ransack (>= 2.1.1, < 4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -48,20 +63,15 @@ GEM
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
     active_storage_validations (0.8.2)
       rails (>= 5.2.0)
-    activeadmin (2.13.1)
-      arbre (~> 1.2, >= 1.2.1)
-      formtastic (>= 3.1, < 5.0)
-      formtastic_i18n (~> 0.4)
-      inherited_resources (~> 1.7)
-      jquery-rails (~> 4.2)
-      kaminari (~> 1.0, >= 1.2.1)
-      railties (>= 6.1, < 7.1)
-      ransack (>= 2.1.1, < 4)
     activejob (7.0.4.1)
       activesupport (= 7.0.4.1)
       globalid (>= 0.3.6)
     activemodel (7.0.4.1)
       activesupport (= 7.0.4.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (7.0.4.1)
       activemodel (= 7.0.4.1)
       activesupport (= 7.0.4.1)
@@ -95,6 +105,7 @@ GEM
       will_paginate
     builder (3.2.4)
     byebug (11.1.3)
+    cancancan (3.4.0)
     capybara (3.38.0)
       addressable
       matrix
@@ -113,6 +124,13 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
     erubi (1.12.0)
     execjs (2.8.1)
     faker (2.1.2)
@@ -197,6 +215,8 @@ GEM
     public_suffix (5.0.1)
     puma (4.3.12)
       nio4r (~> 2.0)
+    pundit (2.3.0)
+      activesupport (>= 3.0.0)
     racc (1.6.2)
     rack (2.2.6.2)
     rack-protection (3.0.5)
@@ -244,6 +264,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.6.2)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -320,14 +342,16 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.8.2)
-  activeadmin
+  activeadmin!
   bcrypt (= 3.1.13)
   bootsnap (>= 1.4.2)
   bootstrap-sass (= 3.4.1)
   bootstrap-will_paginate (= 1.0.0)
   byebug
+  cancancan
   capybara (>= 2.15)
   devise
+  draper
   faker (= 2.1.2)
   html2slim
   image_processing (= 1.9.3)
@@ -336,6 +360,7 @@ DEPENDENCIES
   mini_magick (= 4.9.5)
   omniauth
   puma (~> 4.1)
+  pundit
   rails (~> 7.0.4.1)
   rails-controller-testing
   sass-rails (>= 6)
