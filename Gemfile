@@ -32,9 +32,9 @@ gem 'html2slim'
 gem 'activeadmin', github: 'activeadmin/activeadmin', branch: 'master'
 gem 'devise'
 gem 'omniauth'
-gem 'cancancan'
-gem 'draper'
-gem 'pundit'
+# gem 'cancancan'
+# gem 'draper'
+# gem 'pundit'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
