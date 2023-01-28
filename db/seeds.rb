@@ -51,4 +51,4 @@ user = User.find(101)
   followers = users[3..40]
   following.each { |followed| user.follow(followed) }
   followers.each { |follower| follower.follow(user) }
-end
+endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
