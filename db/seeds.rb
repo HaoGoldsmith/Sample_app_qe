@@ -51,4 +51,25 @@ user = User.find(101)
   followers = users[3..40]
   following.each { |followed| user.follow(followed) }
   followers.each { |follower| follower.follow(user) }
-endAdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+  end
+
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+AdminUser.create!(email: 'saya0304@yandex.ru', password: 'qwerty1234', password_confirmation: 'qwerty1234') if Rails.env.development?
+
+
+Flag.create!([
+               {
+                 "name": "feature_a",
+                 "is_active": true
+               },
+               {
+                 "name": "feature_b",
+                 "is_active": true
+               },
+               {
+                 "name": "feature_c",
+                 "is_active": true
+               }
+             ])
