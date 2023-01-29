@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.7'
 gem "activeadmin"
 gem "devise"
 gem "omniauth"
+gem 'simple_form'
 # gem "will_paginate", "3.0.pre4"
 
 # Use Active Storage variant
