@@ -127,6 +127,9 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
     hashie (5.0.0)
+    hpricot (0.8.6)
+    html2slim (0.2.0)
+      hpricot
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -266,6 +269,13 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim-rails (3.5.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      slim (>= 3.0, < 5.0)
     spring (4.1.1)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
@@ -275,6 +285,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.0-x86_64-linux)
+    temple (0.8.2)
     thor (1.2.1)
     tilt (2.0.11)
     timeout (0.3.1)
@@ -321,6 +332,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   devise
   faker (= 2.1.2)
+  html2slim
   image_processing (= 1.9.3)
   jbuilder (~> 2.7)
   listen (~> 3.2)
@@ -332,6 +344,8 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
+  slim
+  slim-rails
   spring
   sqlite3 (~> 1.4)
   turbolinks (~> 5)
